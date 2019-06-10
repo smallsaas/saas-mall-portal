@@ -2,33 +2,15 @@ import React from 'react';
 import ProductDesItem from '../common/ProductDesItem';
 import { CommonList } from 'list-producibility';
 
+
 class ShowCommonList extends React.Component {
 
 
   render() {
 
-    const listProps = {
-      API:'https://www.muaskin.com/api/gw/product/comments?stockType=Product',
-      // list,
-      item:{
-        type:'ContentListItem'
-      },
-      gateWayData:{
-        // "image":'imageUrl',
-        // "content":'salePoint',
-        // "stats-item":{
-        //   record:'price'
-        // }
-        "title":"product_name",
-        "content":"comment_content",
-      },
-      contentListItemProps:{
-
-      }
-    }
-
     const productProps = {
       API:'https://www.muaskin.com/api/vip/accounts',
+      // API:'https://www.muaskin.com/api/pub/website/info?type=FASHION',
       loadmore:false,
       style:{
         display: 'flex',
@@ -37,7 +19,6 @@ class ShowCommonList extends React.Component {
         margin:'0 auto',
       },
       itemStyle:{
-        display: 'inline-block',
         width:'50%',
         display:'flex',
         justifyContent: 'center',
@@ -50,9 +31,19 @@ class ShowCommonList extends React.Component {
         'label': 'grade',
         'status': 'id',
         'commentNumber': 'followedStoreCode'
-      }
+      },
+      // gateWayData:{
+      //   // 'image':'avatar',
+      //   'subTitle':'updateTime',
+      //   'title':'title',
+      //   'number': 'visitCount',
+      //   'label': 'type',
+      //   'status': 'status',
+      //   'commentNumber': 'id'
+      // }
     }
 
+    console.log('MMMMMMM-');
 
     return (
       <div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import './base.css';
-
+import styles from './base.css';
 class ProductDesItem extends React.Component {
 
   render() {
@@ -57,7 +56,7 @@ class ProductDesItem extends React.Component {
     }
 
     return(
-      <a class='container' href="javascript:void(0);">
+      <a className={ styles.container } href="javascript:void(0);">
         <div style = { imageStyle }></div>
         <div style={ footerStyle }>
           <div>
@@ -74,7 +73,6 @@ class ProductDesItem extends React.Component {
       </a>
     )
   }
-
 }
 
 export default ProductDesItem

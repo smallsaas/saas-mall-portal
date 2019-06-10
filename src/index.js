@@ -1,9 +1,9 @@
+import 'babel-polyfill'; //support IE
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import RouteMap from './RouteMap';
 import * as serviceWorker from './serviceWorker';
-import { HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom';
 
 class Routers extends React.Component {
     render() {
