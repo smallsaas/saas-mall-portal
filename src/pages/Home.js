@@ -1,12 +1,15 @@
-import React from 'react';
 import ProductDesItem from '../common/ProductDesItem';
 import { CommonList } from 'list-producibility';
+import Nav from '../components/nav/Nav';
 
-
-class ShowCommonList extends React.Component {
+class Home extends React.Component {
 
 
   render() {
+
+    window.onscroll = function() {
+      console.log('ggg');
+    }
 
     const productProps = {
       API:'https://www.muaskin.com/api/vip/accounts',
@@ -43,10 +46,9 @@ class ShowCommonList extends React.Component {
       // }
     }
 
-    console.log('MMMMMMM-');
-
     return (
       <div>
+        <Nav/>
         <CommonList {...productProps}>
           <ProductDesItem />
         </CommonList>
@@ -55,4 +57,5 @@ class ShowCommonList extends React.Component {
   }
 }
 
-export default ShowCommonList
+
+export default Home
