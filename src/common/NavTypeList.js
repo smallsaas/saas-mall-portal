@@ -45,6 +45,7 @@ export default class NavTypeList extends React.Component {
     const style = {
       padding:'10px 0',
       backgroundColor:'#554D5D',
+      height:'322px'
     }
 
     const itemStyle = {

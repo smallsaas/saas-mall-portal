@@ -1,10 +1,20 @@
 import React from 'react';
 import styles from './base.css';
+import { Redirect } from 'react-router-dom';
+
 class ProductDesItem extends React.Component {
+
+  onView = () => {
+    const { title } = this.props.itemData;
+    window.MC.crumbsList = '首页' + '-' + title
+    window.location.href = '#/productDetail'
+  }
 
   render() {
 
     const { image,subTitle,title,number,label,status,commentNumber } = this.props.itemData;
+
+    console.log('kkllll',window);
 
     const imageStyle = {
       width:'100%',
@@ -56,7 +66,7 @@ class ProductDesItem extends React.Component {
     }
 
     return(
-      <a className={ styles.container } href="javascript:void(0);">
+      <a className={ styles.container } onClick={() => this.onView()}>
         <div style = { imageStyle }></div>
         <div style={ footerStyle }>
           <div>

@@ -11,7 +11,6 @@ class SearchInput extends React.Component {
   }
 
   onChange = (e) => {
-    console.log('eee',e.target.value);
     if (this.props.onGetSearchDate) {
       this.props.onGetSearchDate(e.target.value)
     }

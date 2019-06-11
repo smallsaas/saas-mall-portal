@@ -46,6 +46,13 @@ export default class Nav extends React.Component {
 
   }
 
+  onClick = (data) => {
+    console.log('KKKK=== ',data);
+    if (data == '首页') {
+      window.location.href = '#/index'
+    }
+  }
+
   render() {
 
     const { typeList,navList,scrollHeight } = this.state;
@@ -79,7 +86,7 @@ export default class Nav extends React.Component {
                       style={{borderRight:index == navList.length - 1 ? 'none' : '1px solid #bbb' }}>
                   {
                     item.list.length > 0 && item.list.map((k,i) => (
-                      <a href="javascript:void(0);" key={i} className={styles.navName}>{k}</a>
+                      <span key={i} onClick={() => this.onClick(k)}>{k}</span>
                     ))
                   }
                 </span>
@@ -94,13 +101,13 @@ export default class Nav extends React.Component {
       <div>
         {
           scrollHeight > fixedHeight ?
-          this.props.children
+          <div style={{height:'60px'}}>
+            {this.props.children}
+          </div>
           :
           createCommonElement()
         }
       </div>
     )
-
   }
-
 }

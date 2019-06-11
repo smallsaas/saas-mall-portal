@@ -26,7 +26,7 @@ class Home extends React.Component {
     const { scrollHeight } = this.state;
 
     const productProps = {
-      API:'https://www.muaskin.com/api/vip/accounts',
+      API:'/api/vip/accounts',
       // API:'https://www.muaskin.com/api/pub/website/info?type=FASHION',
       loadmore:false,
       style:{
@@ -63,6 +63,8 @@ class Home extends React.Component {
     const navProps = {
       getScrollHeight:this.getScrollHeight
     }
+
+    console.log('AAA');
 
     return (
       <div>

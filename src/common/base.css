@@ -6,8 +6,10 @@
   margin-bottom: 1em;
   color: #000;
   text-decoration: none;
+  cursor:pointer;   /*小手标志*/
 }
 
+/* 导航栏上的颜色 */
 .color {
   color:#fff;
 }
@@ -23,4 +25,9 @@
 
 .hoverStyle a:hover {
   color:#f7b200;
+}
+
+/* 面包屑上的颜色 */
+.breadColor {
+  color: #666;
 }
