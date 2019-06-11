@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './nav.css';
+import SearchInput from '../../common/SearchInput';
 
 export default class Nav extends React.Component {
 
@@ -35,13 +36,24 @@ export default class Nav extends React.Component {
     this.setState({
       scrollHeight:document.documentElement.scrollTop
     })
+    if (this.props.getScrollHeight) {
+      this.props.getScrollHeight(document.documentElement.scrollTop)
+    }
+  }
+
+  onSearch = (data) => {
+    console.log('需要查询的内容',data);
+
   }
 
   render() {
 
     const { typeList,navList,scrollHeight } = this.state;
+    const { fixedHeight = 50 } = this.props;
 
-    console.log('KKK',scrollHeight);
+    const searchInputProps = {
+      onSearch:this.onSearch
+    }
 
     const createCommonElement = () => {
       return (
@@ -49,10 +61,7 @@ export default class Nav extends React.Component {
           <div className={styles.topStyle}>
             <img className={styles.logo} src='http://static3.biyao.com/pc/common/img/master/logo.png'/>
             <div style={{width:'40%'}}>
-              <div style={{display:'flex',alignItems:'center'}}>
-                <input className={styles.searchInput} type='text' placeholder='请输入要搜索的商品'/>
-                <span className={styles.searchBtn}></span>
-              </div>
+              <SearchInput {...searchInputProps}/>
               <div style={{marginTop:'0.5em'}}>
                 {
                   typeList.length > 0 && typeList.map((item, index) => (
@@ -81,25 +90,11 @@ export default class Nav extends React.Component {
       )
     }
 
-    const createTypeElement = () => {
-      const style = {
-        padding:'15px 0',
-        position:'fixed',
-        width:'100%',
-        backgroundColor:"#fff",
-        transition: 'all .3s',
-        boxShadow: '0 2px 4px rgba(0,0,0,.05)',
-      }
-      return (
-        <div style={style}>222</div>
-      )
-    }
-
     return(
       <div>
         {
-          scrollHeight > 50 ?
-          createTypeElement()
+          scrollHeight > fixedHeight ?
+          this.props.children
           :
           createCommonElement()
         }

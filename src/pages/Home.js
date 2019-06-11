@@ -1,15 +1,29 @@
 import ProductDesItem from '../common/ProductDesItem';
 import { CommonList } from 'list-producibility';
 import Nav from '../components/nav/Nav';
+import TopFloatHome from '../components/nav/TopFloatHome';
+import NavImage from '../components/home/NavImage';
+
 
 class Home extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollHeight:0
+    }
+  }
+
+  getScrollHeight = (data) => {
+    console.log('KKK6',data);
+    this.setState({
+      scrollHeight: data
+    })
+  }
 
   render() {
 
-    window.onscroll = function() {
-      console.log('ggg');
-    }
+    const { scrollHeight } = this.state;
 
     const productProps = {
       API:'https://www.muaskin.com/api/vip/accounts',
@@ -24,7 +38,7 @@ class Home extends React.Component {
       itemStyle:{
         width:'50%',
         display:'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
       },
       gateWayData:{
         'image':'avatar',
@@ -46,9 +60,17 @@ class Home extends React.Component {
       // }
     }
 
+    const navProps = {
+      getScrollHeight:this.getScrollHeight
+    }
+
     return (
       <div>
-        <Nav/>
+        <Nav {...navProps}>
+          <TopFloatHome/>
+        </Nav>
+        {/*<div style={scrollHeight > 50 ? {marginTop:'140px'} : {}}></div>*/}
+        <NavImage/>
         <CommonList {...productProps}>
           <ProductDesItem />
         </CommonList>

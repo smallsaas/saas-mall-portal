@@ -3,10 +3,11 @@
   height:140px;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   margin-bottom: 1em;
+  padding-bottom: 0.8em;
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  padding-bottom: 0.8em;
+  background-color: #fff;
 }
 
 .topStyle {
