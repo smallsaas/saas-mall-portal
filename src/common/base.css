@@ -31,3 +31,17 @@
 .breadColor {
   color: #666;
 }
+
+/* 三角形 */
+
+.trigon::before {
+  display: block;
+  content: '';
+  width: 13px;
+  height: 13px;
+  background-color: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -6px;
+  margin-left: 1em;
+}

@@ -36,7 +36,6 @@ export default class ProductDetail extends React.Component {
         <div style={{padding:'0 10%'}}>
           <BreadCrumbs/>
           <ProductImages {...productImagesProps}/>
-
         </div>
       </div>
     )

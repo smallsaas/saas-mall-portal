@@ -35,7 +35,7 @@ export default class NavImage extends React.Component {
     return (
       <div style={{margin:'0 10%',marginBottom:'2em',backgroundColor:'#fff'}}>
         <div style={{display:'flex'}}>
-          <div style={{width:'20%'}}>
+          <div style={{width:'20%',minWidth:'200px'}}>
             <NavTypeList/>
           </div>
           <div style={imageStyle}></div>
