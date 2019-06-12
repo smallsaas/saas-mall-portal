@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../components/nav/Nav';
 import BreadCrumbs from '../common/BreadCrumbs';
 import ProductImages from '../components/productDetail/ProductImages';
+import ProductInfo from '../components/productDetail/ProductInfo'
 
 
 export default class ProductDetail extends React.Component {
@@ -30,12 +31,20 @@ export default class ProductDetail extends React.Component {
       list,
     }
 
+    const productInfoProps = {
+
+    }
+
     return(
       <div>
         <Nav />
         <div style={{padding:'0 10%'}}>
           <BreadCrumbs/>
           <ProductImages {...productImagesProps}/>
+          <div style={{marginTop:'2em'}}>
+            <ProductInfo {...productInfoProps}/>
+            <div style={{height:"1000px"}}></div>
+          </div>
         </div>
       </div>
     )
