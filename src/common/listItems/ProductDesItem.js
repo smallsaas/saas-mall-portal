@@ -1,12 +1,22 @@
 import React from 'react';
-import styles from './base.css';
+import styles from '../base.css';
 import { Redirect } from 'react-router-dom';
 
 class ProductDesItem extends React.Component {
 
   onView = () => {
     const { title } = this.props.itemData;
-    window.MC.crumbsList = '首页' + '-' + title
+    const crumbsList = [
+      {
+        url: '#/index',
+        name: '首页'
+      },
+      {
+        name: title
+      }
+    ]
+    //将面包屑存于session中
+    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
     window.location.href = '#/productDetail'
   }
 

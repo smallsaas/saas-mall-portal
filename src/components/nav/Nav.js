@@ -100,7 +100,7 @@ export default class Nav extends React.Component {
     return(
       <div>
         {
-          scrollHeight > fixedHeight ?
+          scrollHeight > fixedHeight && this.props.children ?
           <div style={{height:'60px'}}>
             {this.props.children}
           </div>

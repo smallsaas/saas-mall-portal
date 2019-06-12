@@ -1,4 +1,4 @@
-import ProductDesItem from '../common/ProductDesItem';
+import ProductDesItem from '../common/listItems/ProductDesItem';
 import { CommonList } from 'list-producibility';
 import Nav from '../components/nav/Nav';
 import TopFloatHome from '../components/nav/TopFloatHome';
