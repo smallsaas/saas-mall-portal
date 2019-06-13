@@ -34,6 +34,7 @@ export default class ProductDetail extends React.Component {
     const productInfoProps = {
 
     }
+    
 
     return(
       <div>
@@ -43,6 +44,7 @@ export default class ProductDetail extends React.Component {
           <ProductImages {...productImagesProps}/>
           <div style={{marginTop:'2em'}}>
             <ProductInfo {...productInfoProps}/>
+
           </div>
         </div>
       </div>

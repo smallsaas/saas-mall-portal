@@ -71,7 +71,9 @@ export default class StoreDeatil extends React.Component {
         title: '拉架棉彩色圈圈绣花T恤',
         subTitle: 'Givenchy制造商直供',
         number: '￥179',
-        tagName: '一起拼'
+        tagName: '一起拼',
+        message: '5120条好评',
+        status: '精选',
       },
       {
         image:'http://bfs.biyao.com/group1/M00/F1/E2/rBACW1z_DeuAa3CVAACYYMD44cA830.jpg',

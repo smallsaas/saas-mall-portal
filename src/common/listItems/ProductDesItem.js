@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../base.css';
-import { Redirect } from 'react-router-dom';
 
 class ProductDesItem extends React.Component {
 

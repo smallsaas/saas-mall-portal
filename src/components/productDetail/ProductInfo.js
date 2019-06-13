@@ -1,6 +1,7 @@
 import React from 'react';
 import FixedHeader from './FixedHeader';
 import StoreDeatil from './StoreDeatil';
+import CommentList from './CommentList';
 import styles from '../style.css';
 
 export default class ProductInfo extends React.Component {
@@ -33,6 +34,10 @@ export default class ProductInfo extends React.Component {
 
     const storeDescription = '<p><img src="https://www.muaskin.com/images/upload/image/20190318/1552875470713038438.jpg" title="1552875470713038438.jpg" alt="神经酰胺保湿霜S01.jpg"></p>'
 
+    const commentListProps = {
+
+    }
+
     return(
       <div style={{height:'auto'}}>
         <FixedHeader {...fixedHeaderProps}/>
@@ -48,8 +53,8 @@ export default class ProductInfo extends React.Component {
             >
             </div>
             :
-            <div>
-            dddd
+            <div style={{width: '75%'}}>
+              <CommentList {...commentListProps}/>
             </div>
           }
 
