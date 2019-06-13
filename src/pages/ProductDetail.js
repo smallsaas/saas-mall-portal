@@ -34,12 +34,12 @@ export default class ProductDetail extends React.Component {
     const productInfoProps = {
 
     }
-    
+
 
     return(
       <div>
         <Nav />
-        <div style={{padding:'0 10%'}}>
+        <div style={{padding:'0 10%',backgroundColor:'#fff'}}>
           <BreadCrumbs/>
           <ProductImages {...productImagesProps}/>
           <div style={{marginTop:'2em'}}>

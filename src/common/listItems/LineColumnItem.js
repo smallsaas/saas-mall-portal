@@ -3,7 +3,21 @@ import styles from '../base.css';
 
 class LineColumnItem extends React.Component {
 
-
+  onClick = () => {
+    // const { title } = this.props.itemData;
+    const crumbsList = [
+      {
+        url: '#/index',
+        name: '首页'
+      },
+      {
+        name: '亓口'
+      }
+    ]
+    //将面包屑存于session中
+    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+    window.location.href = '#/store'
+  }
 
   render() {
 
@@ -12,7 +26,8 @@ class LineColumnItem extends React.Component {
     const style = {
       padding: '1em 0',
       borderBottom:'1px solid #dcd1d1',
-      cursor:'pointer'
+      cursor:'pointer',
+      ...this.props.style
     }
 
     const iamgeStyle = {
@@ -58,7 +73,7 @@ class LineColumnItem extends React.Component {
     }
 
     return(
-      <div style={style}>
+      <div style={style} onClick={() => this.onClick()}>
         { image ?
           <div style={{width:'100%',overflow:'hidden'}}>
             <img style={iamgeStyle} className={styles.scaleStyle} src={image}/>
