@@ -43,7 +43,6 @@ export default class ProductDetail extends React.Component {
           <ProductImages {...productImagesProps}/>
           <div style={{marginTop:'2em'}}>
             <ProductInfo {...productInfoProps}/>
-            <div style={{height:"1000px"}}></div>
           </div>
         </div>
       </div>

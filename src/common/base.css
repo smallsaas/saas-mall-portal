@@ -14,6 +14,14 @@
   color:#fff;
 }
 
+.subTitleColor {
+  color:#BF9E6B;
+}
+
+.numberColor {
+  color:#F7A701;
+}
+
 .hoverStyle:hover {
   background-color: rgba(255,255,255,.2)
 }

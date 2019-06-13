@@ -8,7 +8,7 @@ export default class FixedHeader extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      selectIndex: -1,
+      selectIndex: 0,
       scrollHeight: 0,
       offSetHeight: 0,
       firstHeight:0
@@ -24,9 +24,7 @@ export default class FixedHeader extends React.Component {
   }
 
   componentDidMount() {
-    console.log('RRRR2 ',document.documentElement.scrollTop);
     var height = document.getElementById('productInfoHeader').offsetTop;
-    console.log('YYYYYYU',height,document.documentElement.scrollTop);
     this.setState({
       firstHeight: height
     })
@@ -45,6 +43,9 @@ export default class FixedHeader extends React.Component {
     this.setState({
       selectIndex: index
     })
+    if (this.props.onSelect) {
+      this.props.onSelect(index)
+    }
   }
 
   render() {
@@ -62,6 +63,7 @@ export default class FixedHeader extends React.Component {
           position:'fixed',
           top:0,
           width: '80%',
+          zIndex:'101',
         }
       } else {
         return {
@@ -73,22 +75,24 @@ export default class FixedHeader extends React.Component {
     }
 
     const leftStyle = {
-      width:'22%',
+      width:'25%',
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
       borderRight:'1px solid #ccc',
-      padding:'1.3em',
       cursor:'pointer',
+      padding:'1.3em 0'
     }
 
     const rightStyle = (index) => {
       return {
         width:'25%',
         borderRight:'1px solid #ccc',
-        padding:'1.3em 0',
         cursor:'pointer',
         textAlign:'center',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
         borderBottom:selectIndex == index ? '2px solid #523669' : 'none',
         backgroundColor: selectIndex == index ? '#fff' : '#EEECEF',
       }
@@ -96,11 +100,11 @@ export default class FixedHeader extends React.Component {
 
      return (
       <div style={style()} id='productInfoHeader'>
-        <div style={leftStyle}>
+        <div style={leftStyle} onClick={() => this.props.onViewStore()}>
           <img style={{marginRight:'0.8em'}} src={storeIcon}/>
           <span>亓口</span>
         </div>
-        <div style={{display:'flex',width:'78%'}}>
+        <div style={{display:'flex',width:'75%'}}>
           <div style={rightStyle(0)} onClick={() => this.onClick(0)}>商品信息</div>
           <div style={rightStyle(1)} onClick={() => this.onClick(1)}>评价详情（50）</div>
         </div>
