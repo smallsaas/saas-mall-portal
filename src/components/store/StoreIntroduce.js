@@ -1,4 +1,5 @@
 import React from 'react';
+import StarScore from '../../common/starScore/StarScore';
 
 export default class StoreIntroduce extends React.Component {
 
@@ -33,8 +34,16 @@ export default class StoreIntroduce extends React.Component {
           </div>
         </div>
         <div style={{ fontSize:'13px'}}>
-          <div style={{marginBottom:'0.5em'}}>商品质量： 4.9分</div>
-          <div>服务态度： 4.8分</div>
+          <div style={{marginBottom:'0.5em',display:'flex',alignItems: 'center'}}>
+            <span style={{ marginRight: '0.5em'}}>商品质量：</span>
+            <StarScore value={3.6}/>
+            <span style={{ marginLeft: '0.5em',color: '#f49f26'}}> 3.6分</span>
+          </div>
+          <div style={{display:'flex',alignItems: 'center'}}>
+            <span style={{ marginRight: '0.5em'}}>服务态度：</span>
+            <StarScore value={4.3}/>
+            <span style={{ marginLeft: '0.5em',color: '#f49f26'}}> 4.3分</span>
+          </div>
         </div>
       </div>
     )

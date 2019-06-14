@@ -9,6 +9,10 @@ import StoreIntroduce from '../components/store/StoreIntroduce'
 
 export default class Store extends React.Component {
 
+  componentDidMount() {
+    document.documentElement.scrollTop = 0
+  }
+
   render() {
 
     let list = [
@@ -57,7 +61,7 @@ export default class Store extends React.Component {
         margin:'0 4% 8% 4%',
         backgroundColor:'#fff',
         border:'none',
-        padding: '0 1em'
+        padding: '0.5em 1em'
       }
     }
 

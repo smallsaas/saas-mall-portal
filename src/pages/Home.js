@@ -14,6 +14,10 @@ class Home extends React.Component {
     }
   }
 
+  componentDidMount() {
+    document.documentElement.scrollTop = 0
+  }
+
   getScrollHeight = (data) => {
     console.log('KKK6',data);
     this.setState({

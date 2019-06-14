@@ -7,6 +7,10 @@ import ProductInfo from '../components/productDetail/ProductInfo'
 
 export default class ProductDetail extends React.Component {
 
+  componentDidMount() {
+    document.documentElement.scrollTop = 0
+  }
+
   render() {
 
       const list = [

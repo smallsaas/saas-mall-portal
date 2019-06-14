@@ -14,7 +14,20 @@ export default class StoreDeatil extends React.Component {
     }
   }
 
-
+  onView = () => {
+    const crumbsList = [
+      {
+        url: '#/index',
+        name: '首页'
+      },
+      {
+        name: '亓口'
+      }
+    ]
+    //将面包屑存于session中
+    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+    window.location.href = '#/store'
+  }
 
   render() {
 
@@ -39,7 +52,8 @@ export default class StoreDeatil extends React.Component {
       marginTop:'1.3em',
       fontSize:'16px',
       padding:'0.6em 0',
-      textAlign:'center'
+      textAlign:'center',
+      cursor:'pointer',
     }
 
     const modalStyle = {
@@ -102,6 +116,7 @@ export default class StoreDeatil extends React.Component {
           <img style={{width:'75px',border:'1px solid #ccc',cursor:'pointer'}}
                src='http://bfs.biyao.com/group1/M00/03/AE/rBACYVkUkI2APfwPAAC7nzwI-NA595.jpg'
                onMouseEnter={() => this.setState({visible:true})}
+               onClick={() => this.onView()}
           />
           <div style={{ marginLeft: '0.9em',fontSize:'12px'}}>
             <div style={{marginBottom:'0.5em'}}>
@@ -112,7 +127,7 @@ export default class StoreDeatil extends React.Component {
             </div>
           </div>
         </div>
-        <div style={butStyle}>进店看看</div>
+        <div style={butStyle} onClick={() => this.onView()}>进店看看</div>
         {
           visible ?
           <div style={modalStyle} className={styles.trigon}
