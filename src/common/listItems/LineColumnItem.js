@@ -4,24 +4,26 @@ import styles from '../base.css';
 class LineColumnItem extends React.Component {
 
   onClick = () => {
-    // const { title } = this.props.itemData;
-    const crumbsList = [
-      {
-        url: '#/index',
-        name: '首页'
-      },
-      {
-        name: '亓口'
-      }
-    ]
-    //将面包屑存于session中
-    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-    window.location.href = '#/store'
+    const { route } = this.props.itemData;
+    if (route) {
+      const crumbsList = [
+        {
+          url: '#/index',
+          name: '首页'
+        },
+        {
+          name: '亓口'
+        }
+      ]
+      //将面包屑存于session中
+      sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+      window.location.href = '#' + route
+    }
   }
 
   render() {
 
-    const { image,title,subTitle,number,tagName,message,status } = this.props.itemData;
+    const { image,title,subTitle,number,tagName,message,status,route } = this.props.itemData;
 
     const style = {
       padding: '1em 0',

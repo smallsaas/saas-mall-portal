@@ -38,6 +38,21 @@ export default class NavTypeList extends React.Component {
     }
   }
 
+  onClick = (data) => {
+    const crumbsList = [
+      {
+        url: '#/index',
+        name: '首页'
+      },
+      {
+        name: data.name
+      }
+    ]
+    //将面包屑存于session中
+    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+    window.location.href = '#/goodCategory'
+  }
+
   render() {
 
     const { list } = this.state;
@@ -61,7 +76,7 @@ export default class NavTypeList extends React.Component {
               {
                 item.data.length > 0 && item.data.map((k,i) => (
                   <span key={i} style={{ marginRight:'0.5em'}}>
-                    <a href="javascript:void(0);">{k.name}</a>
+                    <a onClick={() => this.onClick(k)} href="javascript:void(0);">{k.name}</a>
                     {
                       i != item.data.length - 1 ?
                       <span style={{marginLeft:'0.5em'}}>/</span>

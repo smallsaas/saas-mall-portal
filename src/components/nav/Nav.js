@@ -53,6 +53,25 @@ export default class Nav extends React.Component {
     }
   }
 
+  onClickType = (data) => {
+    const crumbsList = [
+      {
+        url: '#/index',
+        name: '首页'
+      },
+      {
+        name: '全部分类'
+      },
+      {
+        name: data
+      }
+    ]
+    //将面包屑存于session中
+    sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+    window.location.href = '#/search'
+  }
+
+
   render() {
 
     const { typeList,navList,scrollHeight } = this.state;
@@ -72,7 +91,7 @@ export default class Nav extends React.Component {
               <div style={{marginTop:'0.5em'}}>
                 {
                   typeList.length > 0 && typeList.map((item, index) => (
-                    <a href="javascript:void(0);" className={styles.typeName} key={index}>{item}</a>
+                    <span onClick={() => this.onClickType(item)} className={styles.typeName} key={index}>{item}</span>
                   ))
                 }
               </div>

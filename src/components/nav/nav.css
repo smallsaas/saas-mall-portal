@@ -2,7 +2,7 @@
   padding: 0 10%;
   height:140px;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  margin-bottom: 0.7em;
+  margin-bottom: 0.6em;
   padding-bottom: 0.8em;
   display: flex;
   flex-direction: column;
@@ -47,6 +47,7 @@
   color:#333;
   margin-right: 0.65em;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .typeName:hover {

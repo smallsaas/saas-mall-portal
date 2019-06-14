@@ -3,6 +3,8 @@ import { Route,Redirect,Switch } from "react-router-dom";
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Store from './pages/Store';
+import GoodCategory from './pages/GoodCategory';
+import Search from './pages/Search'
 
 class RouteMap extends React.Component {
     render() {
@@ -13,6 +15,8 @@ class RouteMap extends React.Component {
               <Route path="/index" component={Home}/>
               <Route path="/productDetail" component={ProductDetail}/>
               <Route path="/store" component={Store}/>
+              <Route path="/goodCategory" component={GoodCategory}/>
+              <Route path="/search" component={Search}/>
               <Redirect to='/index' />
           </Switch>
         </main>

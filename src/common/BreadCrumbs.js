@@ -17,7 +17,7 @@ export default class BreadCrumbs extends React.Component {
     }
 
     return (
-      <div>
+      <div style={{padding: '1em 0'}}>
         {
           list.length > 0 && list.map((item,index) => (
             <span key={index} className={styles.breadColor} style={breadNameStyle}>

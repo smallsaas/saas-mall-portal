@@ -40,7 +40,6 @@ export default class ProductImages extends React.Component {
     const style = {
       display: 'flex',
       justifyContent:'space-between',
-      marginTop:'0.8em'
     }
 
     const baseStyle = (obj) =>  {

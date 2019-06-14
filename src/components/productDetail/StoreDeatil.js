@@ -88,20 +88,23 @@ export default class StoreDeatil extends React.Component {
         tagName: '一起拼',
         message: '5120条好评',
         status: '精选',
+        route: '/store'
       },
       {
         image:'http://bfs.biyao.com/group1/M00/F1/E2/rBACW1z_DeuAa3CVAACYYMD44cA830.jpg',
         title: '拉架棉骷髅涂鸦印花T恤',
         subTitle: 'Givenchy制造商直供',
         number: '￥189',
-        tagName: '一起拼'
+        tagName: '一起拼',
+        route: '/store'
       },
       {
         image:'http://bfs.biyao.com/group1/M00/AD/34/rBACW1yR19eAFU7eAACQLl9BpwM401.jpg',
         title: '双面布丝光柔滑短T（2件）',
         subTitle: 'Givenchy制造商直供',
         number: '￥199',
-        tagName: '一起拼'
+        tagName: '一起拼',
+        route: '/store'
       }
     ]
 
