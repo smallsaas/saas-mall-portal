@@ -6,7 +6,16 @@ class SearchInput extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      value: ''
+      value: props.value || ''
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('KKKK ===',nextProps);
+    if (nextProps.value) {
+      this.setState({
+        value: nextProps.value
+      })
     }
   }
 
@@ -29,6 +38,7 @@ class SearchInput extends React.Component {
   render() {
 
     const { width='86%' } = this.props;
+    const { value } = this.state;
 
     const iconStyle = {
       display: 'inline-block',
@@ -56,6 +66,7 @@ class SearchInput extends React.Component {
           style={inputStyle}
           placeholder='请输入要搜索的商品'
           onChange={(e) => this.onChange(e)}
+          value = {value}
        />
         <span style={iconStyle} onClick={() => this.onSearch()}></span>
       </span>

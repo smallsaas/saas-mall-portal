@@ -4,7 +4,6 @@ import SearchInput from '../../common/SearchInput';
 
 export default class Nav extends React.Component {
 
-
   constructor(props){
     super(props);
     this.state = {
@@ -21,6 +20,7 @@ export default class Nav extends React.Component {
         }
       ],
       scrollHeight: 0,
+      queryData: ''
     }
   }
 
@@ -54,6 +54,9 @@ export default class Nav extends React.Component {
   }
 
   onClickType = (data) => {
+    this.setState({
+      queryData: data
+    })
     const crumbsList = [
       {
         url: '#/index',
@@ -68,17 +71,20 @@ export default class Nav extends React.Component {
     ]
     //将面包屑存于session中
     sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-    window.location.href = '#/search'
+    window.location.href = `#/search?query=${data}`
   }
 
 
   render() {
 
-    const { typeList,navList,scrollHeight } = this.state;
+    const { typeList,navList,scrollHeight,queryData } = this.state;
     const { fixedHeight = 50 } = this.props;
 
+    console.log('mmm ',queryData);
+
     const searchInputProps = {
-      onSearch:this.onSearch
+      onSearch:this.onSearch,
+      value: queryData
     }
 
     const createCommonElement = () => {
