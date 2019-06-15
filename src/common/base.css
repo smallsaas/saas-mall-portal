@@ -51,6 +51,9 @@
 }
 
 /* 三角形 */
+.trigon {
+
+}
 
 .trigon::before {
   display: block;
@@ -64,6 +67,17 @@
   margin-left: 1em;
 }
 
+.modaltrigon::before {
+  display: block;
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -8px;
+  left: 50%;
+}
 
 /* 动画 */
 

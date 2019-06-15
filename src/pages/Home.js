@@ -19,7 +19,6 @@ class Home extends React.Component {
   }
 
   getScrollHeight = (data) => {
-    console.log('KKK6',data);
     this.setState({
       scrollHeight: data
     })
@@ -67,8 +66,6 @@ class Home extends React.Component {
     const navProps = {
       getScrollHeight:this.getScrollHeight
     }
-
-    console.log('AAA');
 
     return (
       <div>

@@ -58,12 +58,13 @@
   margin-right:2.5em;
 }
 
-.navItem span {
+.navItemName {
   margin-right: 2.5em;
   color:#000;
   cursor:pointer;
+  position: relative;
 }
 
-.navItem span:hover {
+.navItemName:hover {
   color:#6744AC;
 }

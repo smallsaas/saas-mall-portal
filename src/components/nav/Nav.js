@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './nav.css';
 import SearchInput from '../../common/SearchInput';
+import Modal from '../../common/commonModal/Modal'
 
 export default class Nav extends React.Component {
 
@@ -20,7 +21,8 @@ export default class Nav extends React.Component {
         }
       ],
       scrollHeight: 0,
-      queryData: ''
+      visible1: false,
+      visible2: false,
     }
   }
 
@@ -54,9 +56,6 @@ export default class Nav extends React.Component {
   }
 
   onClickType = (data) => {
-    this.setState({
-      queryData: data
-    })
     const crumbsList = [
       {
         url: '#/index',
@@ -74,17 +73,59 @@ export default class Nav extends React.Component {
     window.location.href = `#/search?query=${data}`
   }
 
+  onMouseEnter = (data) => {
+    let { visible1,visible2 } = this.state;
+    if (data == '了解必要') {
+      visible1 = true
+    }
+    if (data == '我的必要') {
+      visible2 = true
+    }
+    this.setState({
+     visible1,
+     visible2
+    })
+  }
+
+  onMouseLeaver = (data) => {
+    let { visible1,visible2 } = this.state;
+    if (data == '了解必要') {
+      // visible1 = false
+    }
+    if (data == '我的必要') {
+      visible2 = false
+    }
+    this.setState({
+     visible1,
+     visible2
+    })
+  }
+
+  onMouseLeave = (data) => {
+    this.setState({
+     visible1:false,
+     visible2:false
+    })
+  }
+
 
   render() {
 
-    const { typeList,navList,scrollHeight,queryData } = this.state;
+    const { typeList,navList,scrollHeight,visible1,visible2 } = this.state;
     const { fixedHeight = 50 } = this.props;
-
-    console.log('mmm ',queryData);
 
     const searchInputProps = {
       onSearch:this.onSearch,
-      value: queryData
+    }
+
+    const modalProps1 = {
+      visible: visible1,
+      updateVisible:() => this.setState({ visible1: false })
+    }
+
+    const modalProps2 = {
+      visible: visible2,
+      updateVisible:() => this.setState({ visible2: false})
     }
 
     const createCommonElement = () => {
@@ -97,7 +138,11 @@ export default class Nav extends React.Component {
               <div style={{marginTop:'0.5em'}}>
                 {
                   typeList.length > 0 && typeList.map((item, index) => (
-                    <span onClick={() => this.onClickType(item)} className={styles.typeName} key={index}>{item}</span>
+                    <span onClick={() => this.onClickType(item)}
+                          className={styles.typeName} key={index}
+                    >
+                          {item}
+                    </span>
                   ))
                 }
               </div>
@@ -108,10 +153,37 @@ export default class Nav extends React.Component {
             {
               navList.length > 0 && navList.map((item,index) => (
                 <span key={index} className={styles.navItem}
-                      style={{borderRight:index == navList.length - 1 ? 'none' : '1px solid #bbb' }}>
+                      style={{borderRight:index == navList.length - 1 ? 'none' : '1px solid #bbb' }}
+                >
                   {
                     item.list.length > 0 && item.list.map((k,i) => (
-                      <span key={i} onClick={() => this.onClick(k)}>{k}</span>
+                        <span className={styles.navItemName} key={i} onClick={() => this.onClick(k)}
+                              onMouseEnter = {() => this.onMouseEnter(k)}
+                              onMouseLeave = {() => this.onMouseLeave(k)}
+                        >
+                        {k}
+                          {
+                            k == '了解必要' && visible1 ?
+                            <Modal {...modalProps1}>
+                              <div style={{ fontSize:'15px',color:'#4e4e4c',lineHeight:'23px' }}>
+                                <div>关注必要微信公众号</div>
+                                <div>了解你想了解的一切</div>
+                                <div>小必姐在此发福利哦</div>
+                              </div>
+                            </Modal>
+                            : ''
+                          }
+                          {
+                            k == '我的必要' && visible2 ?
+                            <Modal {...modalProps2}>
+                              <div style={{ fontSize:'15px',color:'#4e4e4c',lineHeight:'23px' }}>
+                                <div>扫码下载必要app</div>
+                                <div>手机用户独享海量权益</div>
+                              </div>
+                            </Modal>
+                            : ''
+                          }
+                      </span>
                     ))
                   }
                 </span>

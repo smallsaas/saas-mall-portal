@@ -23,8 +23,6 @@ class ProductDesItem extends React.Component {
 
     const { image,subTitle,title,number,label,status,commentNumber } = this.props.itemData;
 
-    console.log('kkllll',window);
-
     const imageStyle = {
       width:'100%',
       height:'20vw',

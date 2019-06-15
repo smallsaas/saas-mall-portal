@@ -4,8 +4,8 @@ import { CommonList } from 'list-producibility';
 import LineColumnItem from '../common/listItems/LineColumnItem';
 
 import Nav from '../components/nav/Nav';
-import StoreIntroduce from '../components/store/StoreIntroduce'
-
+import StoreIntroduce from '../components/store/StoreIntroduce';
+import TopFloatHome from '../components/nav/TopFloatHome';
 
 export default class Store extends React.Component {
 
@@ -67,7 +67,9 @@ export default class Store extends React.Component {
 
     return(
       <div>
-        <Nav />
+        <Nav>
+          <TopFloatHome/>
+        </Nav>
         <div style={{padding:'0 10%'}}>
           <BreadCrumbs/>
           <StoreIntroduce />

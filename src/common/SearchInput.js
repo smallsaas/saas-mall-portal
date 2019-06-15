@@ -10,13 +10,28 @@ class SearchInput extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('KKKK ===',nextProps);
-    if (nextProps.value) {
+  componentDidMount() {
+    this.getValue()
+  }
+
+  getValue = () => {
+    if (location.href.indexOf('search') > -1) {
+      const query = location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '';
+      let list = query.split('&');
+      let value = '';
+      list.length > 0 && list.map((item,index) => {
+        if (item.indexOf('query') > -1) {
+          value = decodeURIComponent(item.split('=')[1])
+        }
+      })
       this.setState({
-        value: nextProps.value
+        value
       })
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.getValue()
   }
 
   onChange = (e) => {

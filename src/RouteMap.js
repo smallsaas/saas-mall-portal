@@ -7,6 +7,7 @@ import GoodCategory from './pages/GoodCategory';
 import Search from './pages/Search'
 
 class RouteMap extends React.Component {
+
     render() {
 
       return (

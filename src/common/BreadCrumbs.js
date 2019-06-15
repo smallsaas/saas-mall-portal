@@ -4,8 +4,9 @@ import styles from './base.css';
 export default class BreadCrumbs extends React.Component {
 
   onClick = (data) => {
-    console.log('MMM ',data);
-    window.location.href = data.url;
+    if (data.url) {
+      window.location.href = data.url;
+    }
   }
 
   render() {
