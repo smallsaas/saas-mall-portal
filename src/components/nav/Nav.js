@@ -26,9 +26,14 @@ export default class Nav extends React.Component {
     }
   }
 
+  componentDidMount() {
+    // document.body.scrollTop = document.documentElement.scrollTop = 0
+  }
+
   componentWillMount(){
-      window.addEventListener('scroll', this.scrollFunction)
-    }
+    window.addEventListener('scroll', this.scrollFunction)
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+  }
 
   componentWillUnmount(){
     window.removeEventListener('scroll',this.scrollFunction)
@@ -107,7 +112,6 @@ export default class Nav extends React.Component {
      visible2:false
     })
   }
-
 
   render() {
 

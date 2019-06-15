@@ -10,7 +10,8 @@ import TopFloatHome from '../components/nav/TopFloatHome';
 export default class Store extends React.Component {
 
   componentDidMount() {
-    document.documentElement.scrollTop = 0
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+
   }
 
   render() {

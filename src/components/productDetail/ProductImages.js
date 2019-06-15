@@ -2,7 +2,7 @@ import React from 'react';
 import ImagesWall from '../../common/ImagesWall';
 import styles from '../style.css';
 import Tag from '../../common/Tag';
-import MallTips from '../../common/MallTips'
+import MallTips from '../../common/MallTips';
 
 export default class ProductImages extends React.Component {
 

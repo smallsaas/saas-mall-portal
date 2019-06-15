@@ -11,31 +11,20 @@ export default class FixedHeader extends React.Component {
       selectIndex: 0,
       scrollHeight: 0,
       offSetHeight: 0,
-      firstHeight:0
+      firstHeight:0,
     }
   }
 
-  componentWillMount(){
-    window.addEventListener('scroll', this.scrollFunction)
-  }
-
-  componentWillUnmount(){
-    window.removeEventListener('scroll',this.scrollFunction)
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      scrollHeight: nextProps.scrollTop
+    })
   }
 
   componentDidMount() {
     var height = document.getElementById('productInfoHeader').offsetTop;
     this.setState({
       firstHeight: height
-    })
-  }
-
-  scrollFunction = () => {
-    var height = document.getElementById('productInfoHeader').offsetTop;
-    var scollHeight = document.documentElement.scrollTop;
-    this.setState({
-      scrollHeight:scollHeight,
-      offSetHeight: height
     })
   }
 
@@ -49,9 +38,9 @@ export default class FixedHeader extends React.Component {
   }
 
   render() {
-    const _this = this;
 
     const { selectIndex,scrollHeight,offSetHeight,firstHeight } = this.state;
+    console.log('KKKK ===0',scrollHeight,offSetHeight);
 
 
     const style = () => {

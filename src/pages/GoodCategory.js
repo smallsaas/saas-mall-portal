@@ -10,7 +10,7 @@ import Nav from '../components/nav/Nav';
 export default class GoodCategory extends React.Component {
 
   componentDidMount() {
-    document.documentElement.scrollTop = 0
+    document.body.scrollTop = document.documentElement.scrollTop = 0
   }
 
   render() {

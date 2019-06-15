@@ -1,5 +1,8 @@
 import NavTypeList from '../../common/NavTypeList';
-import image from '../../images/home_1.png';
+// import image from '../../images/home_1.png';
+// import image require('../../images/public_code.png')
+
+const image = require('../../images/home_1.png')
 
 export default class NavImage extends React.Component {
 

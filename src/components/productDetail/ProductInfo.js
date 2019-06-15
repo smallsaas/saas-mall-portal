@@ -10,18 +10,27 @@ export default class ProductInfo extends React.Component {
     super(props);
     this.state = {
       selectIndex: 0,
+      scrollTop: 0,
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      scrollTop: nextProps.scrollTop
+    })
+  }
+
+
   render() {
 
-    const { selectIndex } = this.state;
+    const { selectIndex,scrollTop } = this.state;
 
     const fixedHeaderProps = {
       onViewStore() {
 
       },
-      onSelect:(data) => this.setState({ selectIndex: data})
+      onSelect:(data) => this.setState({ selectIndex: data}),
+      scrollTop,
     }
 
     const storeDetailProps = {

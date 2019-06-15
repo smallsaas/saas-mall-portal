@@ -2,16 +2,28 @@ import React from 'react';
 import Nav from '../components/nav/Nav';
 import BreadCrumbs from '../common/BreadCrumbs';
 import ProductImages from '../components/productDetail/ProductImages';
-import ProductInfo from '../components/productDetail/ProductInfo'
+import ProductInfo from '../components/productDetail/ProductInfo';
+import BrowserScrolling from '../common/BrowserScrolling';
 
 
 export default class ProductDetail extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollTop: 0
+    }
+  }
+
   componentDidMount() {
-    document.documentElement.scrollTop = 0
+    document.body.scrollTop = document.documentElement.scrollTop = 0
   }
 
   render() {
+
+    const { scrollTop } = this.state;
+
+    console.log('JJJ');
 
       const list = [
         {
@@ -36,12 +48,17 @@ export default class ProductDetail extends React.Component {
     }
 
     const productInfoProps = {
+      scrollTop
+    }
 
+    const scrollProps = {
+      onGetHeight:(data) => this.setState({scrollTop: data})
     }
 
 
     return(
       <div>
+        <BrowserScrolling {...scrollProps}/>
         <Nav />
         <div style={{padding:'0 10%',backgroundColor:'#fff'}}>
           <BreadCrumbs/>
@@ -51,6 +68,7 @@ export default class ProductDetail extends React.Component {
 
           </div>
         </div>
+
       </div>
     )
 

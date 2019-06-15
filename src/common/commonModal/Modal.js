@@ -1,5 +1,4 @@
 import React from 'react';
-import code from '../../images/public_code.png';
 import styles from '../base.css';
 
 
@@ -49,7 +48,7 @@ export default class Modal extends React.Component {
         {
           visible ?
           <div>
-            <img style={{ width:'150px'}} src={code} />
+            <img style={{ width:'150px'}} src={require('../../images/public_code.png')} />
             {
               this.props.children
             }

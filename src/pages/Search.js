@@ -12,7 +12,8 @@ import TopFloatHome from '../components/nav/TopFloatHome';
 export default class Search extends React.Component {
 
   componentDidMount() {
-    document.documentElement.scrollTop = 0
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+
   }
 
   render() {
