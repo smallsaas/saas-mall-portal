@@ -58,6 +58,20 @@ export default class Nav extends React.Component {
     if (data == '首页') {
       window.location.href = '#/index'
     }
+    if (data == '每日上新') {
+      const crumbsList = [
+        {
+          url: '#/index',
+          name: '首页'
+        },
+        {
+          name: data
+        }
+      ]
+      //将面包屑存于session中
+      sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
+      window.location.href = '#/news'
+    }
   }
 
   onClickType = (data) => {

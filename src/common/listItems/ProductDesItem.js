@@ -77,7 +77,7 @@ class ProductDesItem extends React.Component {
         <div style = { imageStyle }></div>
         <div style={ footerStyle }>
           <div>
-            { number ? <span style={ numberStyle }>￥{number}</span> : '' }
+            { number ? <span style={ numberStyle }>{number}</span> : '' }
             { label ? <span style={ labelStyle }>{ label }</span> : '' }
             { status ? <span style= { statusStyle }>{status}</span> : '' }
           </div>

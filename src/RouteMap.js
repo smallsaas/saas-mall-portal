@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Store from './pages/Store';
 import GoodCategory from './pages/GoodCategory';
-import Search from './pages/Search'
+import Search from './pages/Search';
+import News from './pages/News';
 
 class RouteMap extends React.Component {
 
@@ -18,6 +19,7 @@ class RouteMap extends React.Component {
             <Route path="/store" component={Store}/>
             <Route path="/goodCategory" component={GoodCategory}/>
             <Route path="/search" component={Search}/>
+            <Route path="/news" component={News}/>
             <Redirect to='/index' />
           </Switch>
         </main>
