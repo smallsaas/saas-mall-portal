@@ -5,6 +5,7 @@ import TopFloatHome from '../components/nav/TopFloatHome';
 import BreadCrumbs from '../common/BreadCrumbs';
 import NewsList from '../components/news/NewsList';
 import ButtomContent from '../components/buttomContent/ButtomContent'
+import FixedArrow from '../common/FixedArrow';
 
 
 export default class News extends React.Component {
@@ -12,11 +13,19 @@ export default class News extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
+      scrollHeight: 0
     }
   }
 
+  getScrollHeight = (data) => {
+    this.setState({
+      scrollHeight: data
+    })
+  }
+
   render() {
+
+    const { scrollHeight } = this.state;
 
     const item = {
       status: '一起拼',
@@ -111,9 +120,17 @@ export default class News extends React.Component {
       list:data.concat(data,data,data),
     }
 
+    const fixedArrowProps = {
+      height: scrollHeight,
+    }
+
+    const navProps = {
+      getScrollHeight:this.getScrollHeight
+    }
+
     return (
       <div>
-        <Nav>
+        <Nav {...navProps}>
           <TopFloatHome/>
         </Nav>
         <div style={{ padding: '0 10%'}}>
@@ -121,6 +138,7 @@ export default class News extends React.Component {
           <NewsList {...listProps}/>
         </div>
         <ButtomContent/>
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
   }

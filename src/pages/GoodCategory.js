@@ -4,18 +4,34 @@ import { CommonList } from 'list-producibility';
 import LineColumnItem from '../common/listItems/LineColumnItem';
 import CategoryList from '../components/goodCategory/CategoryList';
 import TopFloatHome from '../components/nav/TopFloatHome';
-import ButtomContent from '../components/buttomContent/ButtomContent'
-
+import ButtomContent from '../components/buttomContent/ButtomContent';
+import FixedArrow from '../common/FixedArrow';
 
 import Nav from '../components/nav/Nav';
 
 export default class GoodCategory extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollHeight:0
+    }
+  }
+
   componentDidMount() {
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }
 
+  getScrollHeight = (data) => {
+    this.setState({
+      scrollHeight: data
+    })
+  }
+
+
   render() {
+
+    const { scrollHeight } = this.state;
 
     const item = {
       title: '拉架棉彩色圈圈绣花T恤',
@@ -182,10 +198,18 @@ export default class GoodCategory extends React.Component {
       data,
     }
 
+    const fixedArrowProps = {
+      height: scrollHeight
+    }
+
+    const navProps = {
+      getScrollHeight:this.getScrollHeight
+    }
+
     return(
 
       <div>
-        <Nav>
+        <Nav {...navProps}>
           <TopFloatHome/>
         </Nav>
         <div style={{padding:'0 10%'}}>
@@ -193,6 +217,7 @@ export default class GoodCategory extends React.Component {
           <CategoryList {...categoryListProps}/>
         </div>
         <ButtomContent />
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
 

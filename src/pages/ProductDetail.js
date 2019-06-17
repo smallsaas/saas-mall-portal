@@ -4,7 +4,8 @@ import BreadCrumbs from '../common/BreadCrumbs';
 import ProductImages from '../components/productDetail/ProductImages';
 import ProductInfo from '../components/productDetail/ProductInfo';
 import BrowserScrolling from '../common/BrowserScrolling';
-import ButtomContent from '../components/buttomContent/ButtomContent'
+import ButtomContent from '../components/buttomContent/ButtomContent';
+import FixedArrow from '../common/FixedArrow';
 
 
 
@@ -57,6 +58,9 @@ export default class ProductDetail extends React.Component {
       onGetHeight:(data) => this.setState({scrollTop: data})
     }
 
+    const fixedArrowProps = {
+      height: scrollTop,
+    }
 
     return(
       <div>
@@ -71,6 +75,7 @@ export default class ProductDetail extends React.Component {
           </div>
         </div>
         <ButtomContent />
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
 

@@ -6,11 +6,24 @@ import LineColumnItem from '../common/listItems/LineColumnItem';
 import Nav from '../components/nav/Nav';
 import StoreIntroduce from '../components/store/StoreIntroduce';
 import TopFloatHome from '../components/nav/TopFloatHome';
-import ButtomContent from '../components/buttomContent/ButtomContent'
-
+import ButtomContent from '../components/buttomContent/ButtomContent';
+import FixedArrow from '../common/FixedArrow';
 
 
 export default class Search extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollHeight: 0
+    }
+  }
+
+  getScrollHeight = (data) => {
+    this.setState({
+      scrollHeight: data
+    })
+  }
 
   componentDidMount() {
     document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -18,6 +31,8 @@ export default class Search extends React.Component {
   }
 
   render() {
+
+    const { scrollHeight } = this.state;
 
     const item = {
       title: '拉架棉彩色圈圈绣花T恤',
@@ -83,9 +98,17 @@ export default class Search extends React.Component {
       }
     }
 
+    const navProps = {
+      getScrollHeight:this.getScrollHeight
+    }
+
+    const fixedArrowProps = {
+      height: scrollHeight,
+    }
+
     return(
       <div>
-        <Nav>
+        <Nav {...navProps}>
           <TopFloatHome/>
         </Nav>
         <div style={{padding:'0 10%'}}>
@@ -98,6 +121,7 @@ export default class Search extends React.Component {
           </CommonList>
         </div>
         <ButtomContent />
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
 

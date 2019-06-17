@@ -3,7 +3,8 @@ import { CommonList } from 'list-producibility';
 import Nav from '../components/nav/Nav';
 import TopFloatHome from '../components/nav/TopFloatHome';
 import NavImage from '../components/home/NavImage';
-import ButtomContent from '../components/buttomContent/ButtomContent'
+import ButtomContent from '../components/buttomContent/ButtomContent';
+import FixedArrow from '../common/FixedArrow';
 
 
 class Home extends React.Component {
@@ -133,12 +134,15 @@ class Home extends React.Component {
       getScrollHeight:this.getScrollHeight
     }
 
+    const fixedArrowProps = {
+      height: scrollHeight,
+    }
+
     return (
       <div>
         <Nav {...navProps}>
           <TopFloatHome/>
         </Nav>
-        {/*<div style={scrollHeight > 50 ? {marginTop:'140px'} : {}}></div>*/}
         <div style={{ padding:'0 10%' }}>
           <NavImage/>
           <CommonList {...productProps}>
@@ -146,6 +150,7 @@ class Home extends React.Component {
           </CommonList>
         </div>
         <ButtomContent />
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
   }

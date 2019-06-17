@@ -6,16 +6,32 @@ import LineColumnItem from '../common/listItems/LineColumnItem';
 import Nav from '../components/nav/Nav';
 import StoreIntroduce from '../components/store/StoreIntroduce';
 import TopFloatHome from '../components/nav/TopFloatHome';
-import ButtomContent from '../components/buttomContent/ButtomContent'
+import ButtomContent from '../components/buttomContent/ButtomContent';
+import FixedArrow from '../common/FixedArrow';
 
 export default class Store extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollHeight: 0
+    }
+  }
 
   componentDidMount() {
     document.body.scrollTop = document.documentElement.scrollTop = 0
 
   }
 
+  getScrollHeight = (data) => {
+    this.setState({
+      scrollHeight: data
+    })
+  }
+
   render() {
+
+    const { scrollHeight } = this.state
 
     let list = [
       {
@@ -67,9 +83,17 @@ export default class Store extends React.Component {
       }
     }
 
+    const navProps = {
+      getScrollHeight:this.getScrollHeight
+    }
+
+    const fixedArrowProps = {
+      height: scrollHeight,
+    }
+
     return(
       <div>
-        <Nav>
+        <Nav {...navProps}>
           <TopFloatHome/>
         </Nav>
         <div style={{padding:'0 10%'}}>
@@ -80,6 +104,7 @@ export default class Store extends React.Component {
           </CommonList>
         </div>
         <ButtomContent />
+        <FixedArrow {...fixedArrowProps}/>
       </div>
     )
 
