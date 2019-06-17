@@ -4,6 +4,8 @@ import BreadCrumbs from '../common/BreadCrumbs';
 import ProductImages from '../components/productDetail/ProductImages';
 import ProductInfo from '../components/productDetail/ProductInfo';
 import BrowserScrolling from '../common/BrowserScrolling';
+import ButtomContent from '../components/buttomContent/ButtomContent'
+
 
 
 export default class ProductDetail extends React.Component {
@@ -68,7 +70,7 @@ export default class ProductDetail extends React.Component {
 
           </div>
         </div>
-
+        <ButtomContent />
       </div>
     )
 

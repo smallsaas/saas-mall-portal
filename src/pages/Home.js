@@ -3,6 +3,7 @@ import { CommonList } from 'list-producibility';
 import Nav from '../components/nav/Nav';
 import TopFloatHome from '../components/nav/TopFloatHome';
 import NavImage from '../components/home/NavImage';
+import ButtomContent from '../components/buttomContent/ButtomContent'
 
 
 class Home extends React.Component {
@@ -28,20 +29,85 @@ class Home extends React.Component {
 
     const { scrollHeight } = this.state;
 
+    const item = {
+      subTitle:'Givenchy制造商直供',
+      title:'美国棉平纹基础POLO衫5色',
+      number:'￥189',
+      label:'精选',
+      status:'一起拼',
+      commentNumber:'223条好评'
+    }
+
+    const list = [
+      {
+        image:'http://bfs.biyao.com/group1/M00/BD/EA/rBACVFy36A2AZd2ZAAIS5hbYDHk595.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/E6/C0/rBACW1zvPQ6AbasOAADmi4B7kuE082.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/D0/36/rBACVFzU7dyABCkgAAGHo5aeQ4U272.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/D0/70/rBACVFzVHdKAS-XxAAJD3Ua2ojI572.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/1A/10/rBACW1mRPxiAdWwUAAC_xY0lIFY914.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/55/ED/rBACYVuRAHeAep6HAAFY8nCFVYk257.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/19/AB/rBACYVmMFXyAMtF-AACvqqQ_pL0633.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/AC/30/rBACW1yPT2WAFr16AAED9iGQp3c018.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/37/AF/rBACVFr-jl6AUTO6AAF1X_LTpu8209.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/1B/2A/rBACYVmfzGGAah-BAADAN3n6Vgc852.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/B4/AD/rBACW1ykhQyAOgZaAAJQzrU6tgQ612.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/E7/31/rBACYVzviBeAdB8vAAI_qPhFuXA985.jpg',
+        ...item
+      },
+      {
+        image:'http://bfs.biyao.com/group1/M00/1B/2A/rBACYVmfzGGAah-BAADAN3n6Vgc852.jpg',
+        ...item
+      },
+    ]
+
     const productProps = {
-      API:'/api/vip/accounts',
+      // API:'/api/vip/accounts',
       // API:'https://www.muaskin.com/api/pub/website/info?type=FASHION',
+      list:list.concat(list,list,list,list,list,list),
       loadmore:false,
       style:{
         display: 'flex',
         flexWrap: 'wrap',
-        padding:'0 10%',
         margin:'0 auto',
       },
       itemStyle:{
         width:'50%',
         display:'flex',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
+        justifyContent: 'center'
       },
       gateWayData:{
         'image':'avatar',
@@ -73,10 +139,13 @@ class Home extends React.Component {
           <TopFloatHome/>
         </Nav>
         {/*<div style={scrollHeight > 50 ? {marginTop:'140px'} : {}}></div>*/}
-        <NavImage/>
-        <CommonList {...productProps}>
-          <ProductDesItem />
-        </CommonList>
+        <div style={{ padding:'0 10%' }}>
+          <NavImage/>
+          <CommonList {...productProps}>
+            <ProductDesItem />
+          </CommonList>
+        </div>
+        <ButtomContent />
       </div>
     )
   }

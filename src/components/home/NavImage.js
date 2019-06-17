@@ -33,7 +33,7 @@ export default class NavImage extends React.Component {
     }
 
     return (
-      <div style={{margin:'0 10%',marginBottom:'2em',backgroundColor:'#fff'}}>
+      <div style={{ marginBottom:'2em',backgroundColor:'#fff'}}>
         <div style={{display:'flex'}}>
           <div style={{width:'20%',minWidth:'200px'}}>
             <NavTypeList/>

@@ -4,6 +4,8 @@ import { CommonList } from 'list-producibility';
 import LineColumnItem from '../common/listItems/LineColumnItem';
 import CategoryList from '../components/goodCategory/CategoryList';
 import TopFloatHome from '../components/nav/TopFloatHome';
+import ButtomContent from '../components/buttomContent/ButtomContent'
+
 
 import Nav from '../components/nav/Nav';
 
@@ -190,6 +192,7 @@ export default class GoodCategory extends React.Component {
           <BreadCrumbs/>
           <CategoryList {...categoryListProps}/>
         </div>
+        <ButtomContent />
       </div>
     )
 

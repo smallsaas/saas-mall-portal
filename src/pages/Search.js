@@ -6,6 +6,7 @@ import LineColumnItem from '../common/listItems/LineColumnItem';
 import Nav from '../components/nav/Nav';
 import StoreIntroduce from '../components/store/StoreIntroduce';
 import TopFloatHome from '../components/nav/TopFloatHome';
+import ButtomContent from '../components/buttomContent/ButtomContent'
 
 
 
@@ -96,6 +97,7 @@ export default class Search extends React.Component {
             <LineColumnItem {...lineColumnItemProps}/>
           </CommonList>
         </div>
+        <ButtomContent />
       </div>
     )
 
