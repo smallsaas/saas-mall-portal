@@ -1,8 +1,5 @@
 import NavTypeList from '../../common/NavTypeList';
-// import image from '../../images/home_1.png';
-// import image require('../../images/public_code.png')
-
-const image = require('../../images/home_1.png')
+import homeImage from './../../images/home-image.png';
 
 export default class NavImage extends React.Component {
 
@@ -11,7 +8,7 @@ export default class NavImage extends React.Component {
     const imageStyle = {
       width:'80%',
       height:'342px',
-      backgroundImage:`url(${image})`,
+      backgroundImage:`url(${require('../../images/home-image.png')})`,
       backgroundRepeat:'no-repeat',
       backgroundPosition:'center',
       backgroundSize:'cover',

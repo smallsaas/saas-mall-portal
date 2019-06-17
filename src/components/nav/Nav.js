@@ -14,10 +14,10 @@ export default class Nav extends React.Component {
           list:['首页','每日上新']
         },
         {
-          list:['了解必要','下载必要APP']
+          list:['了解Small','下载Small APP']
         },
         {
-          list:['我的必要']
+          list:['我的Small']
         }
       ],
       scrollHeight: 0,
@@ -80,10 +80,10 @@ export default class Nav extends React.Component {
 
   onMouseEnter = (data) => {
     let { visible1,visible2 } = this.state;
-    if (data == '了解必要') {
+    if (data == '了解Small') {
       visible1 = true
     }
-    if (data == '我的必要') {
+    if (data == '我的Small') {
       visible2 = true
     }
     this.setState({
@@ -94,10 +94,10 @@ export default class Nav extends React.Component {
 
   onMouseLeaver = (data) => {
     let { visible1,visible2 } = this.state;
-    if (data == '了解必要') {
+    if (data == '了解Small') {
       // visible1 = false
     }
-    if (data == '我的必要') {
+    if (data == '我的Small') {
       visible2 = false
     }
     this.setState({
@@ -136,7 +136,8 @@ export default class Nav extends React.Component {
       return (
         <div className = {styles.container}>
           <div className={styles.topStyle}>
-            <img className={styles.logo} src='http://static3.biyao.com/pc/common/img/master/logo.png'/>
+            {/*<img className={styles.logo} src='http://static3.biyao.com/pc/common/img/master/logo.png'/>*/}
+            <img className={styles.logo} src={require('../../images/logo.png')}/>
             <div style={{width:'40%'}}>
               <SearchInput {...searchInputProps}/>
               <div style={{marginTop:'0.5em'}}>
@@ -167,10 +168,10 @@ export default class Nav extends React.Component {
                         >
                         {k}
                           {
-                            k == '了解必要' && visible1 ?
+                            k == '了解Small' && visible1 ?
                             <Modal {...modalProps1}>
                               <div style={{ fontSize:'15px',color:'#4e4e4c',lineHeight:'23px' }}>
-                                <div>关注必要微信公众号</div>
+                                <div>关注Small微信公众号</div>
                                 <div>了解你想了解的一切</div>
                                 <div>小必姐在此发福利哦</div>
                               </div>
@@ -178,10 +179,10 @@ export default class Nav extends React.Component {
                             : ''
                           }
                           {
-                            k == '我的必要' && visible2 ?
+                            k == '我的Small' && visible2 ?
                             <Modal {...modalProps2}>
                               <div style={{ fontSize:'15px',color:'#4e4e4c',lineHeight:'23px' }}>
-                                <div>扫码下载必要app</div>
+                                <div>扫码下载Small app</div>
                                 <div>手机用户独享海量权益</div>
                               </div>
                             </Modal>
