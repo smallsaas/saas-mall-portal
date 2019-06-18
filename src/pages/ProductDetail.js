@@ -19,14 +19,22 @@ export default class ProductDetail extends React.Component {
   }
 
   componentDidMount() {
-    document.body.scrollTop = document.documentElement.scrollTop = 0
+    // document.body.scrollTop = document.documentElement.scrollTop = 0
+    window.onbeforeunload = function() {
+      var n = window.event.screenX - window.screenLeft;
+      var b = n > document.documentElement.scrollWidth - 20;
+      if(b && window.event.clientY < 0 || window.event.altKey){
+          alert("这是一个关闭操作而非刷新");
+      }else{
+          // alert("这是一个刷新操作而非关闭");
+          document.documentElement.scrollTop = document.body.scrollTop = 0
+      }
+     }
   }
 
   render() {
 
     const { scrollTop } = this.state;
-
-    console.log('JJJ');
 
       const list = [
         {

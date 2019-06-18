@@ -95,10 +95,10 @@ export default class Nav extends React.Component {
   onMouseEnter = (data) => {
     let { visible1,visible2 } = this.state;
     if (data == '了解Small') {
-      visible1 = true
+      // visible1 = true
     }
     if (data == '我的Small') {
-      visible2 = true
+      // visible2 = true
     }
     this.setState({
      visible1,
