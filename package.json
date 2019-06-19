@@ -15,7 +15,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
-    "list-producibility": "git+ssh://github@zele.pro:/home/github/isp/hub/yyl/list-producibility"
+    "list-producibility": "git+ssh://github@zele.pro:/home/github/isp/hub/yyl/list-producibility.git"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
