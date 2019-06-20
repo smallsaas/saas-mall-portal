@@ -9,18 +9,18 @@ class Routers extends React.Component {
 
   render() {
       return (
-          <BrowserRouter>
+          <HashRouter basename='/'>
             <RouteMap />
-          </BrowserRouter>
+          </HashRouter>
       )
   }
 
   }
 
   ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
       <Routers/>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
   );
 

@@ -8,7 +8,7 @@ class LineColumnItem extends React.Component {
     if (route) {
       const crumbsList = [
         {
-          url: '/',
+          url: '#/',
           name: '首页'
         },
         {
@@ -17,7 +17,8 @@ class LineColumnItem extends React.Component {
       ]
       //将面包屑存于session中
       sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-      window.location.href = route
+      window.location.href = '#' + route
+      // history.go(route)
     }
   }
 

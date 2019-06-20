@@ -17,7 +17,7 @@ export default class StoreDeatil extends React.Component {
   onView = () => {
     const crumbsList = [
       {
-        url: '#/index',
+        url: '#/',
         name: '首页'
       },
       {

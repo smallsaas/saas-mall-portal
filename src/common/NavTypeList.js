@@ -41,7 +41,7 @@ export default class NavTypeList extends React.Component {
   onClick = (data) => {
     const crumbsList = [
       {
-        url: '/',
+        url: '#/',
         name: '首页'
       },
       {
@@ -50,7 +50,7 @@ export default class NavTypeList extends React.Component {
     ]
     //将面包屑存于session中
     sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-    window.location.href = '/goodCategory'
+    window.location.href = '#/goodCategory'
   }
 
   render() {

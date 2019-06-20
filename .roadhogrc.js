@@ -7,8 +7,5 @@ export default {
   "outputPath": "./dist",
   "autoprefixer": null,
   "proxy": null,
-  "extraBabelPlugins": [
-    "transform-runtime",
-  ],
-  "devtool": false,
+  "historyApiFallback":false
 }
