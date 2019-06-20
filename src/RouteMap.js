@@ -14,13 +14,13 @@ class RouteMap extends React.Component {
       return (
         <main>
           <Switch>
-            <Route path="/index" component={Home}/>
+            <Route exact path="/" component={Home}/>
             <Route path="/productDetail" component={ProductDetail}/>
             <Route path="/store" component={Store}/>
             <Route path="/goodCategory" component={GoodCategory}/>
             <Route path="/search" component={Search}/>
             <Route path="/news" component={News}/>
-            <Redirect to='/index' />
+            <Redirect to="/"/>
           </Switch>
         </main>
       )

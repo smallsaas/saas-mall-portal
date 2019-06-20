@@ -41,7 +41,7 @@ export default class ButtomContent extends React.Component {
             <span>《隐私政策》</span>
           </div>
           <div>
-            Copyright © 2019, Small-7.com 广州可圈点科技有限公司   备案编号：<a href='http://www.beian.miit.gov.cn'>粤ICP备15099534号-2</a>
+            Copyright © 2019 广州可圈点科技有限公司  备案编号：<a href='http://www.beian.miit.gov.cn'>粤ICP备15099534号-2</a>
           </div>
           {/*<div>
             营业执照 增值电信业务经营许可证 互联网药品信息服务资格证书 食品经营许可证

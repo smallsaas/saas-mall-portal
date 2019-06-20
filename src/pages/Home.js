@@ -38,6 +38,7 @@ class Home extends React.Component {
 
   render() {
 
+    console.log('555');
 
 
     const { scrollHeight } = this.state;

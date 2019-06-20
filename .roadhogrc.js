@@ -9,5 +9,6 @@ export default {
   "proxy": null,
   "extraBabelPlugins": [
     "transform-runtime",
-  ]
+  ],
+  "devtool": false,
 }

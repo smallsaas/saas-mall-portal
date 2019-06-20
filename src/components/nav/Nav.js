@@ -56,12 +56,12 @@ export default class Nav extends React.Component {
   onClick = (data) => {
     console.log('KKKK=== ',data);
     if (data == '首页') {
-      window.location.href = '#/index'
+      window.location.href = '/'
     }
     if (data == '每日上新') {
       const crumbsList = [
         {
-          url: '#/index',
+          url: '/',
           name: '首页'
         },
         {
@@ -70,14 +70,14 @@ export default class Nav extends React.Component {
       ]
       //将面包屑存于session中
       sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-      window.location.href = '#/news'
+      window.location.href = '/news'
     }
   }
 
   onClickType = (data) => {
     const crumbsList = [
       {
-        url: '#/index',
+        url: '/',
         name: '首页'
       },
       {
@@ -89,7 +89,7 @@ export default class Nav extends React.Component {
     ]
     //将面包屑存于session中
     sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-    window.location.href = `#/search?query=${data}`
+    window.location.href = `/search?query=${data}`
   }
 
   onMouseEnter = (data) => {

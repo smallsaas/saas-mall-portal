@@ -7,7 +7,7 @@ class ProductDesItem extends React.Component {
     const { title } = this.props.itemData;
     const crumbsList = [
       {
-        url: '#/index',
+        url: '/',
         name: '首页'
       },
       {
@@ -16,7 +16,7 @@ class ProductDesItem extends React.Component {
     ]
     //将面包屑存于session中
     sessionStorage.setItem('crumbsList',JSON.stringify(crumbsList))
-    window.location.href = '#/productDetail'
+    window.location.href = '/productDetail'
   }
 
   render() {
