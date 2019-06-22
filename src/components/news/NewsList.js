@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonList } from 'list-producibility';
+import CommonList from '../../common/listItems/CommonList';
 import LeftRightItem from '../../common/listItems/LeftRightItem'
 
 export default class NewsList extends React.Component {

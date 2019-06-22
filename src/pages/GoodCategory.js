@@ -1,6 +1,6 @@
 import React from 'react';
 import BreadCrumbs from '../common/BreadCrumbs';
-import { CommonList } from 'list-producibility';
+import CommonList from '../common/listItems/CommonList';
 import LineColumnItem from '../common/listItems/LineColumnItem';
 import CategoryList from '../components/goodCategory/CategoryList';
 import TopFloatHome from '../components/nav/TopFloatHome';

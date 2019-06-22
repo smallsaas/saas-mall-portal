@@ -2,7 +2,7 @@ import React from 'react';
 import storeIcon from '../../images/supplier-icon.png';
 import { getScrollHeight,getScrollTop,getClientHeight} from '../../utils/getHeight';
 import styles from '../style.css';
-import { CommonList } from 'list-producibility';
+import CommonList from '../../common/listItems/CommonList';
 import LineColumnItem from '../../common/listItems/LineColumnItem';
 
 export default class StoreDeatil extends React.Component {

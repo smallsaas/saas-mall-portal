@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonList } from 'list-producibility';
+import CommonList from '../common/listItems/CommonList';
 import Nav from '../components/nav/Nav';
 import TopFloatHome from '../components/nav/TopFloatHome';
 import BreadCrumbs from '../common/BreadCrumbs';

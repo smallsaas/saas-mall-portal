@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioButtton from '../../common/RadioButtton';
 import CommentItem from '../../common/listItems/CommentItem';
-import { CommonList } from 'list-producibility';
+import CommonList from '../../common/listItems/CommonList';
 
 export default class CommentList extends React.Component {
 

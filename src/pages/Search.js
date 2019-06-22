@@ -1,8 +1,7 @@
 import React from 'react';
 import BreadCrumbs from '../common/BreadCrumbs';
-import { CommonList } from 'list-producibility';
+import CommonList from '../common/listItems/CommonList';
 import LineColumnItem from '../common/listItems/LineColumnItem';
-
 import Nav from '../components/nav/Nav';
 import StoreIntroduce from '../components/store/StoreIntroduce';
 import TopFloatHome from '../components/nav/TopFloatHome';

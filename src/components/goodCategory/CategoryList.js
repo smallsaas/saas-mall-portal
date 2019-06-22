@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonList } from 'list-producibility';
+import CommonList from '../../common/listItems/CommonList';
 import LineColumnItem from '../../common/listItems/LineColumnItem';
 import styles from './categoryList.css'
 
@@ -14,7 +14,7 @@ export default class CategoryList extends React.Component {
   }
 
   onClickType = (data) => {
-    
+
   }
 
   render() {
